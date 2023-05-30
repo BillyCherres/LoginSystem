@@ -16,6 +16,7 @@ public class Main {
         User.admins = new LinkedList<User>();
 
         while (n != 0){
+            // menu
         System.out.println("-------------------------\n");
         System.out.println("Choose from these choices");
         System.out.println("-------------------------\n");
@@ -28,7 +29,9 @@ public class Main {
         System.out.println("7 - Login Parent Account");
         System.out.println("8 - Terminate Account");
         System.out.println("0 - Quit");
+        // prompts user to choose from menu
         n = scanner.nextInt();
+        // switch case which calls upon functions based off choice
         switch(n){
             //Parent Sign in/Sign up
             case 1:

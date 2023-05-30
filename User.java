@@ -1,25 +1,23 @@
+// Parent Class
 import java.util.LinkedList;
 import java.util.Scanner;
 
-public abstract class User{
+public abstract class User{// abstract so an object cant be made for this class
     private String _Username;
     private int _Password;
     private boolean _Verify = false;
-    private int Id;
-    private String Phone;
+    private int Id;// this is specific to the teacher only
+    private String Phone;// this is specific to the parent only
 
+    // list that holds all of the accounts
     public static LinkedList<User> admins;
 
+    // constructor
     public User (){
-        set_username("Empty");
-        set_password(0);
+
     }
 
-    public User(String username, int password){
-        set_username(username);
-        set_password(password);
-    }
-
+    // getters and setters
     public void set_username(String username){
         _Username = username;
     }
@@ -61,7 +59,7 @@ public abstract class User{
     }
 
 
-    
+    // Parent sign up func
     public static void ParentSignUp(){
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter your Username");
@@ -76,7 +74,7 @@ public abstract class User{
 
     
     }
-
+    // Student Sign up Func
     public static void StudentSignUp(){
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter your Username");
@@ -88,6 +86,7 @@ public abstract class User{
         User.admins.add(student);
     }
 
+    // Teacher Sign Up func
     public static void TeacherSignUp(){
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter your Username");
@@ -102,6 +101,7 @@ public abstract class User{
         User.admins.add(teacher);
     }
 
+    // Termination Function
     public static void Terminate(){
         Scanner scanner = new Scanner(System.in);
         System.out.println("Please enter your username");

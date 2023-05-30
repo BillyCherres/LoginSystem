@@ -8,6 +8,7 @@ public class Teacher extends User{
         set_ID(ID);
     }
    
+    // Verify function that checks attributes specific too Teachers
     public static void verify(){
         Scanner scanner = new Scanner(System.in);
         System.out.println("Please enter Username: ");
@@ -20,6 +21,7 @@ public class Teacher extends User{
         for (User u: User.admins){
         if (tempName.equals(u.get_username()) && tempPass == u.get_password() && tempID == u.get_ID()){
             System.out.println("Verification Success");
+            // sets verify to true
             u.set_verify(true);
             return;
         }
