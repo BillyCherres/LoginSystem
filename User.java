@@ -115,6 +115,61 @@ public abstract class User{// abstract so an object cant be made for this class
         }
         System.out.println("Error: Either your Username is incorrect or your not logged into the account");
 }
+// Change Username Function
+public static void ChangeName(){
+    Scanner scanner = new Scanner(System.in);
+    System.out.println("Please enter your username");
+    String Temp = scanner.nextLine();
+    for(User u: User.admins){
+        if (Temp.equals(u.get_username()) && u.get_verify()){
+            System.out.println("Please enter your new Username");
+            String newName = scanner.nextLine();
+            System.out.println("Please re-enter your new Username");
+            String TempnewName = scanner.nextLine();
+            
+            if(newName.equals(TempnewName)){
+                u.set_username(newName);
+                u.set_verify(false);
+                System.out.println("New Username is set. Please re-login to your account");
+                return;
+            }else{
+                System.out.println("New Username does not match. Please re do your step 8");
+                return;
+            }
+
+        }
+        System.out.println("Error: Either your Username is incorrect or your not logged into the account");
+
+    }
+
+}
+// Change Password Function
+    public static void ChangePassword(){
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Please enter your username");
+        String Temp = scanner.nextLine();
+        for(User u: User.admins){
+            if (Temp.equals(u.get_username()) && u.get_verify()){
+                System.out.println("Please enter your new password");
+                int newPass = scanner.nextInt();
+                System.out.println("Please re-enter your new password");
+                int TempnewPass = scanner.nextInt();
+                if(newPass != TempnewPass){
+                    System.out.println("New Password does not match. Please re do your step 9");
+                    return;
+                }else{
+                    u.set_password(newPass);
+                    u.set_verify(false);
+                    System.out.println("New Password is set. Please re-login to your account");
+                    return;
+                }
+
+            }
+            System.out.println("Error: Either your Username is incorrect or your not logged into the account");
+
+        }
+
+    }
 
 
     

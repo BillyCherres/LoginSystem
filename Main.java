@@ -27,7 +27,9 @@ public class Main {
         System.out.println("5 - Login Teacher Account");
         System.out.println("6 - Login Student Account");
         System.out.println("7 - Login Parent Account");
-        System.out.println("8 - Terminate Account");
+        System.out.println("8 - Change Username");
+        System.out.println("9 - Change Password");
+        System.out.println("10 - Terminate Account");
         System.out.println("0 - Quit");
         // prompts user to choose from menu
         n = scanner.nextInt();
@@ -76,8 +78,18 @@ public class Main {
             scanner.nextLine();
             Parent.verify();
             break;
-            //Terminate Account
+            // Change Username
             case 8:
+            scanner.nextLine();
+            User.ChangeName();
+            break;
+            // Change Password
+            case 9:
+            scanner.nextLine();
+            User.ChangePassword();
+            break;
+            //Terminate Account
+            case 10:
             scanner.nextLine();
             User.Terminate();
             break;
